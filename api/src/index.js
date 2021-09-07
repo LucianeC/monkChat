@@ -12,7 +12,7 @@ app.use(express.json());
 app.post('/login', async (req, resp) => {
     const login = req.body.usuario;
     const senha = req.body.senha;
-    const cryptoSenha = crypto.SHA256(senha).toString(crypto.enc.Base64);
+    const cryptoSenha = crypto.SHA256(senha).toString(crypto.enc.Base64);   
 
     let u = await db.tb_usuario.findOne({ 
         where: { 
